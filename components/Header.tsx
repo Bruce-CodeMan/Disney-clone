@@ -5,7 +5,11 @@
  */
 import Link from "next/link";
 import Image from "next/image";
-import { ModeToggle } from "./ThemeToggler";
+
+// Custom Imports
+import { ModeToggle } from "@/components/ThemeToggler";
+import SearchInput from "@/components/SearchInput"
+import GenreDropdown from "./GenreDropdown";
 
 const Header = () => {
   return (
@@ -22,7 +26,9 @@ const Header = () => {
 
       <div className="flex space-x-2">
         {/* GenreDropDown */}
+        <GenreDropdown />
         {/* SearchInput */}
+        <SearchInput />
         {/* ThemeToggler */}
         <ModeToggle />
       </div>

@@ -59,3 +59,11 @@ export async function getDiscoverMovies(id?: string, keywords?: string) {
   const data = await fetchFromTMDB(url)
   return data.results
 }
+
+export async function getSearchedMovies(term: string) {
+  const url = new URL("https://api.themoviedb.org/3/search/movie")
+  url.searchParams.set("query", term)
+
+  const data = await fetchFromTMDB(url)
+  return data.results
+}

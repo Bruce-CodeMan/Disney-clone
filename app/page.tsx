@@ -3,11 +3,19 @@
  * @Author: Bruce Hsu
  * @Description: 
  */
+import MoviesCarousel from "@/components/MoviesCarousel"
+import { getUpcomingMovies } from "@/lib/getMovies"
 
-export default function Home() {
+export default async function Home() {
+
+  const upcomingMovies = await getUpcomingMovies()
+
   return (
-    <main className="text-red-500">
-      Hello Bruce
+    <main className="">
+      <div className="flex flex-col space-y-2">
+        {/* MovieCarousel movies={...} title={...} */}
+        <MoviesCarousel title="Upcoming" movies={upcomingMovies}/>
+      </div>
     </main>
   )
 }
